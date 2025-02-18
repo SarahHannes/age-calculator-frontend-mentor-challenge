@@ -1,0 +1,230 @@
+/* FONTS */
+/* Bold */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-Bold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* BoldItalic */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-BoldItalic.ttf") format('truetype');
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* ExtraBold */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-ExtraBold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 800;
+}
+
+/* ExtraBoldItalic */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf") format('truetype');
+    font-style: italic;
+    font-weight: 800;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-Italic.ttf") format('truetype');
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-Regular.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+/* COLORS */
+:root {
+    --purple: #854dff;
+    --light-red: #ff5757;
+
+    --white: #ffffff;
+    --off-white: #f0f0f0;
+    --light-grey: #dbdbdb;
+    --smokey-grey: #716f6f;
+    --off-black: #141414;
+  }
+  
+
+html, body {
+    margin: 0;
+    /* font-size: 16px; */
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--off-white)
+}
+
+main {
+    margin: 50px auto;
+    padding: 40px;
+    width: 500px;
+    height: 350px;
+    border-radius: 4% 4% 30% 4%;
+    background-color: var(--white);
+}
+
+/* input */
+
+.input-container {
+    display: flex;
+}
+
+label {
+    font-weight: 400;
+    color: var(--smokey-grey);
+}
+
+input {
+    width: 130px;
+    height: 50px;
+    padding: 5px 0 5px 10px;
+
+    border-radius: 10%;
+    border: 1px solid var(--light-grey);
+    
+    color: var(--off-black);
+    
+    font-size: 2rem;
+    font-family: Poppins;
+    font-weight: 700;
+
+}
+
+
+.error-container {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.error {
+    color: var(--light-red);
+    height: 0.8rem; /* make it a fixed height, so the form does not jump around when error is displayed/hidden */
+    font-weight: 400;
+    font-size: 0.8rem;
+    flex-basis: 100%; /* make flex child occupy its space even if next siblings is deleted ref: https://stackoverflow.com/a/43524910*/
+    
+}
+
+/* use double colon :: for pseudo-elements
+1 colon for pseudo-class
+*/
+input::placeholder {
+    color: var(--smokey-grey);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+input:active, input:focus, input:hover {
+    color: var(--off-black);
+    cursor: pointer;
+    outline: 1px solid var(--purple);
+    
+}
+
+/* separator line */
+
+.separator {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    border-bottom: 1px solid var(--light-grey);
+    width: 99%;
+}
+
+.line-right {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+button {
+    background-image: url("/assets/images/icon-arrow.svg");
+    width: 40px;
+    height: 40px;
+    background-color: var(--purple);
+    background-size: cover;
+    border-radius: 50%;
+    border: none;
+    
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--off-black);
+}
+
+/* output */
+
+.outputs {
+    font-size: 3rem;
+    font-family: Poppins;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.purple-text {
+    color: var(--purple);
+}
+
+
+/* debug */
+
+.debug {
+    /* border: 1px solid blue; */
+    border: none;
+}
+
+.debug2 {
+    /* border: 1px solid red; */
+    border: none;
+}
+
+
+/* mobile */
+@media only screen and (max-device-width: 375px){
+
+    main {
+        margin: 50px 10px;
+        width: 270px;
+    }
+
+    /* input */
+    input {
+        width: 50px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    /* separator line */
+    .line-right {
+        width: 99%;
+        visibility: visible;
+    }
+
+    .error-container {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+}
